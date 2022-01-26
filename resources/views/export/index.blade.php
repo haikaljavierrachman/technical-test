@@ -36,8 +36,14 @@
               </tr>
               <tr>
                 <td>Foto</td>
+                @if ($staff->foto)
                 <div class="w-70px h-70px">
-                    <td><img src="{{ asset('storage/' . $staff->foto) }}" class="img-thumbnail"></td>
+                  <td><img src="{{ asset('storage/' . $staff->foto) }}" class="img-thumbnail"></td>
+                  @else 
+                  <div class="w-70px h-70px">
+                    <td><img src="{{ asset('storage/images/default.jpg') }}" class="img-thumbnail"></td>
+
+                @endif
                 </div>
               </tr>
             </tbody>

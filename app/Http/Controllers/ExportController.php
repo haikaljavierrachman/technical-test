@@ -19,13 +19,22 @@ class ExportController extends Controller
     {
         $staff = Staff::find($id);
         $path = storage_path('app/public');
+
+        if ($staff->foto) {
+            $source = $staff->foto;
+        } else {
+            $source = 'images/default.jpg';
+        }
+
+
+
         $templateProcessor = new TemplateProcessor('word-template/user.docx');
         $templateProcessor->setValue('nama', $staff->nama);
         $templateProcessor->setValue('gender', $staff->gender);
         $templateProcessor->setValue('nohp', $staff->nohp);
         $templateProcessor->setValue('email', $staff->email);
         $templateProcessor->setValue('salary', $staff->salary);
-        $templateProcessor->setImageValue('foto', array('path' => $path . '/' . $staff->foto, 'width' => 150, 'height' => 100, 'ratio' => false));
+        $templateProcessor->setImageValue('foto', array('path' => $path . '/' . $source, 'width' => 120, 'height' => 100, 'ratio' => false));
 
 
 

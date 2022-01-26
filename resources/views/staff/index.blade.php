@@ -53,8 +53,8 @@
             </div>
             <div class="form-group">
                 <label for="foto">Pilih Foto</label>
-                <input type="file" class="form-control-file" id="foto" name="foto" @error('foto') is-invalid @enderror>
-                @error('salary')    
+                <input type="file" class="form-control" id="foto" name="foto" @error('foto') is-invalid @enderror>
+                @error('foto')    
                   <div class="invalid-feedback">
                     {{ $message }}
                   </div>
@@ -62,6 +62,7 @@
               </div>
             
             <button type="submit" class="btn btn-primary d-flex">Submit</button>
+         
           </form>
     </div>
 </div>
