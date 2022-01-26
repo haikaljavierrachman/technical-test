@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\ExportController;
 use App\Models\Staff;
 
 /*
@@ -27,3 +28,5 @@ Route::get('/', function () {
 });
 
 Route::resource('/staff', StaffController::class);
+Route::get('/staff/export/{id}', [ExportController::class, 'index']);
+Route::get('/staff/export-word/{id}', [ExportController::class, 'exportWord']);

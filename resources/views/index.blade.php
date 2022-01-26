@@ -23,6 +23,7 @@
                 <th scope="row">{{ $loop->iteration }}</th>
                 <td>{{ $staff->nama }}</td>
                 <td>
+                    <a href="/staff/export/{{ $staff->id }}" class="badge badge-primary">Export</a>
                     <a href="/staff/{{ $staff->id }}" class="badge badge-warning">Detail</a>
                     <form action="/staff/{{ $staff->id }}" method="post" class="d-inline">
                       @method('delete')
